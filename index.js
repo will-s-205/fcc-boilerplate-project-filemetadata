@@ -30,7 +30,7 @@ const fileStorageEngine = multer.diskStorage({
   }
 });
 
-const maxSize = 10000000;
+const maxSize = 200000;
 const uploads = multer({ storage: fileStorageEngine, limits: { fileSize: maxSize } })
 
 app.post("/api/fileanalyse", uploads.single('upfile'), async (req, res) => { // for single file
