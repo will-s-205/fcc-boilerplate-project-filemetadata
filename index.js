@@ -1,9 +1,10 @@
-var express = require('express');
-var cors = require('cors');
-var bodyParser = require('body-parser');
-require('dotenv').config()
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const multer = require('multer');
+const bodyParser = require('body-parser');
 
-var app = express();
+const app = express();
 
 app.use(cors());
 app.use('/public', express.static(process.cwd() + '/public'));
@@ -16,5 +17,20 @@ app.get('/', function (req, res) {
 
 const port = process.env.PORT || 3000;
 app.listen(port, function () {
-  console.log('Your app is listening on port ' + port)
+  console.log('Your app is listening on port ' + port);
 });
+
+const uploads = multer({storage})
+
+const fileStorageEngine = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, './uploads');
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  }
+})
+
+app.post("/api/fileanalyse", async (req,res) => {
+
+})
