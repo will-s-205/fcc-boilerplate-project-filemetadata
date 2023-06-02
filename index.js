@@ -20,8 +20,6 @@ app.listen(port, function () {
   console.log('Your app is listening on port ' + port);
 });
 
-const uploads = multer({storage})
-
 const fileStorageEngine = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, './uploads');
@@ -30,6 +28,8 @@ const fileStorageEngine = multer.diskStorage({
     cb(null, file.originalname);
   }
 })
+
+const uploads = multer({storage: fileStorageEngine})
 
 app.post("/api/fileanalyse", async (req,res) => {
 
