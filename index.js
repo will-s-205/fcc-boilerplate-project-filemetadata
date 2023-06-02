@@ -32,10 +32,8 @@ const fileStorageEngine = multer.diskStorage({
 
 const uploads = multer({ storage: fileStorageEngine })
 
-app.post("/api/fileanalyse", uploads.single('upfile'), async (req,res) => { // for single file
-// app.post("/api/fileanalyse", uploads.array('upfile'), async (req, res) => { // for multiple files, don't forget to add multiple next to name="upfile" in index.html
-  // console.log(req.file);
-  // console.log(req.files);
-  res.json({ name: req.file.filenames, type: req.file.mimetypes, size: req.file.sizes, });
-    // res.send({uploaded: req.files});
+app.post("/api/fileanalyse", uploads.single('upfile'), async (req, res) => { // for single file
+  // app.post("/api/fileanalyse", uploads.array('upfile'), async (req, res) => { // for multiple files, don't forget to add multiple next to name="upfile" in index.html
+  console.log(req.file); // OR // console.log(req.files);
+  res.json({ name: req.file.filename, type: req.file.mimetype, size: req.file.size, }); // OR // res.send({uploaded: req.files});
 });
