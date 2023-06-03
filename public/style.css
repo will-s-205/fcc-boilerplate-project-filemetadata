@@ -1,8 +1,9 @@
 /****** Main Styling ******/
 
 body {
+  margin-top: 100px;
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   color: #222;
   background: radial-gradient(circle, rgba(213,213,213,1) 37%, rgba(187,187,187,1) 71%);
   text-align: center;
