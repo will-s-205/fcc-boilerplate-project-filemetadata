@@ -11,12 +11,12 @@ app.use('/public', express.static(process.cwd() + '/public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.get('/', function (req, res) {
+app.get('/', function(req, res) {
   res.sendFile(process.cwd() + '/views/index.html');
 });
 
 const port = process.env.PORT || 3000;
-app.listen(port, function () {
+app.listen(port, function() {
   console.log('Your app is listening on port ' + port);
 });
 
@@ -30,7 +30,7 @@ const fileStorageEngine = multer.diskStorage({
   }
 });
 
-const maxSize = 200000;
+const maxSize = 300000;
 const uploads = multer({ storage: fileStorageEngine, limits: { fileSize: maxSize } })
 
 app.post("/api/fileanalyse", uploads.single('upfile'), async (req, res) => { // for single file
