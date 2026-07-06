@@ -5,7 +5,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   color: #222;
-  background: radial-gradient(circle, rgba(213,213,213,1) 37%, rgba(187,187,187,1) 71%);
+  background: radial-gradient(circle, rgba(213, 213, 213, 1) 37%, rgba(187, 187, 187, 1) 71%);
   text-align: center;
 }
 
@@ -29,10 +29,10 @@ input#button {
 }
 
 .view {
-  position:relative;
+  position: relative;
   margin: auto;
   /* margin-top: 40px; */
-	border: 3mm double rgba(53, 53, 53, 0.1);
+  border: 3mm double rgba(53, 53, 53, 0.1);
   border-radius: 30px;
   padding: 15px;
   /* width: 60%; */
@@ -40,7 +40,7 @@ input#button {
 }
 
 hr {
-	margin: 25px auto;
-	height: 2px;
-	width: 100px;
+  margin: 25px auto;
+  height: 2px;
+  width: 100px;
 }
